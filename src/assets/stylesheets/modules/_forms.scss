@@ -1,0 +1,222 @@
+// Reset
+input, button, textarea, select {
+	color: $text-color;
+	margin:                  0;
+	padding:                 0;
+	background:              none;
+	border:                  none;
+	border-radius:           0;
+	outline:                 none;
+	-webkit-appearance:      none;
+	-moz-appearance:         none;
+	appearance:              none;
+	cursor: pointer;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px $bg-color inset;
+}
+// form
+form{
+	position:                relative;
+	z-index:                 8;
+}
+
+// input
+.button,
+input, textarea, select, button{
+  margin:                  0;
+  min-height:              $header-height-m;
+  font-size:               1em;
+//  border-radius:           4px;
+	box-sizing:              border-box;
+	&[disabled]{
+//		color:                 $border-color;
+	}
+}
+input[type="image"]{
+	padding: 0;
+	min-width: 48px;
+	-webkit-tap-highlight-color: initial;
+  tap-highlight-color:initial;
+}
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+textarea{
+//  border:                  1px solid $border-color;
+//	box-shadow:             $shadow-input inset;
+}
+textarea{
+	display:                 block;
+	resize:  vertical;
+}
+
+.url-group .input{
+	input[type="text"]{
+		position: relative;
+		padding-left: 132px;
+	}
+	&:after{
+		content: "http://imatomix.com/";
+		display: block;
+		position: absolute;
+		top: 19px;
+		left: 52px;
+		font-size: 0.8em;
+		color: $link-color;
+	}
+}
+
+input[type="search"]{
+	display: block;
+	margin: 0.6rem auto 1.5rem auto;
+	max-width: 360px;
+	padding: 0 0.8rem;
+	box-shadow: $shadow inset;
+  border: 1px solid $shadow-color;
+	border-radius: 20px;
+}
+
+input[type="checkbox"]{
+  display:                 none;
+  + label {
+  	position:              relative;
+  	display:               inline-block;
+  	padding:               0.5em 2em;
+  	cursor:                pointer;
+    &:before{
+      position:            absolute;
+	    content:             '';
+	    top:                 22px;
+	    left:                0;
+      width:               16px;
+      height:              16px;
+      margin-top:          -1em;
+      background:          $white;
+      border:              1px solid $border-color;
+      border-radius:       50%;
+    }
+    &:focus::before{
+      border:              2px solid $link-color;
+    }
+  }
+  &:checked + label::after {
+    position:              absolute;
+    content:               '';
+    top:                   12px;
+    left:                  4px;
+    width:                 10px;
+    height:                10px;
+		border-radius: 50%;
+		background: $text-color;
+  }
+}
+
+// file
+input.hidden{
+	display:               none;
+}
+
+label[for="portrait"]{
+	position: relative;
+	.camera{
+		display:               none;
+		position:              absolute;
+		top:                   0;
+		bottom:                0;
+		left:                  0;
+		right:                 0;
+		color:                 $bg-color;
+		background:  					 $modal-color;
+		background-image:      url(/images/ui/icon_camera.svg);
+		background-size:       64px 64px;
+		background-position:   center 25px;
+		background-repeat:     no-repeat;
+		border-radius:         50%;
+		&:before{
+			content:             '画像を変更';
+			position:            absolute;
+			font-size:           0.8em;
+			bottom:              22px;
+			left: 0;
+			right:0;
+		}
+	}
+	&:hover{
+		.camera{
+			display: block;
+			animation-name:      dissolvein;
+			animation-duration:  0.25s;
+			animation-timing-function: ease;
+		}
+	}
+}
+
+// button
+.button,
+input[type="button"],
+input[type="submit"]{
+	outline:                 0;
+  cursor:                  pointer;
+  min-height:              38px;
+	font-size:               0.9em;
+	font-weight:             600;
+	border-radius:           4px;
+	text-align:              center;
+//	box-shadow: 						 $shadow-button;
+	-webkit-tap-highlight-color: initial;
+	tap-highlight-color:initial;
+	transition:  all 0.1s 0s ease-out;
+}
+.button{
+	&:hover, &:focus{
+		background-color:      $link-bgcolor;
+	}
+}
+input[type="button"]{
+//  border:                  1px solid $text-color;
+	&:hover, &:focus{
+		padding:               7px 5px;
+//		color:                 $link-color;
+		background-color:      $link-bgcolor;
+//		box-shadow: 					 $shadow;
+	}
+}
+input[type="submit"], input.submit{
+  color:                   $bg-color;
+  background:              $text-color;
+  &:hover, &:focus{
+		background:            $link-color;
+//		box-shadow: 					 $shadow;
+  }
+}
+.select-group{
+	position: relative;
+	&:after{
+		content: '';
+		position: absolute;
+		top: calc(50% - 4px);
+		right: 1rem;
+		width: 5px;
+		height: 5px;
+		border-bottom: 2px solid $text-color;
+		border-right: 2px solid $text-color;
+		transform: rotate(45deg);
+	}
+}
+#publish{
+  select{
+		font-size: 0.9rem;
+		border-radius: 4px 0 0 4px;
+		padding: 0;
+		padding-left: 0.5rem;
+    border: 2px solid $text-color;
+		border-right: 0;
+  }
+  input[type="submit"]{
+    width: 5rem;
+		padding: 0;
+		border: 2px solid $text-color;
+		border-radius: 0 4px 4px 0;
+  }
+}

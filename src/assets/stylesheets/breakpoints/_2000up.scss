@@ -1,0 +1,20 @@
+.col-2{
+  > *{
+    &:first-child{
+      width:          $sidebar-width+200px;
+      >*{
+        width:        $sidebar-width+200px;
+      }
+    }
+  }
+}
+.col-3{
+  > *{
+    &:first-child{
+      width:          $sidebar-width+150px;
+      >*{
+        width:          $sidebar-width+150px;
+      }
+    }
+  }
+}

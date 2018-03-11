@@ -1,0 +1,12 @@
+@mixin icon($url:null) {
+    &:before {
+        content: '';
+        display: inline-block;
+        width:  35px;
+        height: 55px;
+        margin-right: 10px;
+        vertical-align:middle;
+        background: url(#{$url}) no-repeat center;
+        background-size: 25px 25px;
+    }
+}

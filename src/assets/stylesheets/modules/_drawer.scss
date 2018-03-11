@@ -1,0 +1,185 @@
+/* drawer */
+#drawer-content{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: $bg-color;
+  transition: transform 0.2s, background-color .5s;
+  z-index: 1;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  tap-highlight-color:rgba(0,0,0,0);
+  #contents{
+    flex: 1;
+  }
+  &.open-left{
+    transform: translateX(100px);
+    >*{
+      pointer-events: none;
+    }
+  }
+  &.open-right{
+    transform: translateX(-200px);
+    >*{
+      pointer-events: none;
+    }
+  }
+}
+#drawer-menu-left, #drawer-menu-right{
+  position: fixed;
+  top: $header-height-m;
+  bottom: 0;
+  color: $bg-color;
+  background: $text-color;
+  z-index: 0;
+}
+#drawer-menu-left{
+  left: 0;
+  width: 100px;
+}
+#drawer-menu-right{
+  right: 0;
+  width: 200px;
+}
+.drawer-menu{
+  padding-top:      $header-height-m/2;
+  text-align:       left;
+  height:           100%;
+}
+.drawer-menu-item{
+  > a{
+    position:       relative;
+    display:        inline-block;
+    padding:        0.2rem 1rem;
+    width:          100%;
+    height:         auto;
+    font-size:      0.8rem;
+    line-height:    $header-height-m;
+    color:          rgba($bg-color, 0.7);
+    box-sizing: border-box;
+    &.current{
+      color:        $bg-color;
+      &:after{
+        content:    '';
+        position:   absolute;
+        top:        48%;
+        left:       5px;
+        height:     4px;
+        width:      4px;
+        background: $bg-color;
+        border-radius: 50%;
+      }
+    }
+    &.belong {
+      color:        $bg-color;
+      &:after{
+        content: '';
+        position:   absolute;
+        bottom:     0.75em;
+        top:        0.75em;
+        right: 0;
+        padding-bottom: 0.5rem;
+        border-right: 3px solid $bg-color;
+      }
+    }
+  }
+}
+#drawer-menu-right{
+  .drawer-menu-item{
+    > a{
+      &.belong {
+        &:after{
+          right: auto;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+.drawer-footer{
+  position:       absolute;
+  right:          0;
+  left:           0;
+  bottom:         0;
+  text-align:     center;
+  border-top:     1px dashed $border-color;
+  background:     $text-color;
+  padding:        0.2rem 0;
+  font-size:      0.8rem;
+  line-height:    $header-height-m;
+  color:          rgba($bg-color, 0.7);
+}
+.humberger-button{
+  position:           fixed;
+  top:                0;
+  left:               0;
+  display:            inline-block;
+	width:              $header-height-m;
+  height:             $header-height-m;
+  box-sizing:         border-box;
+  transition:         all .3s;
+  span{
+    display:          inline-block;
+	  transition:       all .3s;
+	  box-sizing:       border-box;
+    position:         absolute;
+  	left:             28%;
+  	width:            40%;
+  	height:           1px;
+  	background-color: $text-color;
+    &:nth-of-type(1){
+      top:            $header-height-m/2-6;
+    }
+    &:nth-of-type(2){
+      top:            $header-height-m/2-1;
+    }
+    &:nth-of-type(3){
+      top:            $header-height-m/2+4;
+    }
+  }
+  &.active{
+    span:nth-of-type(1) {
+	    transform:      translateY(5px) rotate(-135deg);
+    }
+    span:nth-of-type(2) {
+      left:           50%;
+	    opacity:        0;
+    }
+    span:nth-of-type(3) {
+	    transform:      translateY(-5px) rotate(135deg);
+    }
+  }
+}
+
+@media only screen and (min-width: 481px) {
+  #drawer-content{
+    #contents{
+      flex: 1;
+    }
+    &.open-left{
+      transform: translateX(0px);
+      >*{
+        pointer-events: auto;
+      }
+    }
+    &.open-right{
+      transform: translateX(0px);
+      >*{
+        pointer-events: auto;
+      }
+    }
+  }
+  #drawer-menu-left,  #drawer-menu-right{
+    display: none;
+  }
+  .drawer-menu{
+    display:          block !important;
+    top:              0;
+    bottom:           auto;
+    width:            100%;
+    padding-top:      0;
+    text-align:       center;
+    background:       transparent;
+    z-index:          0;
+  }
+}

@@ -1,0 +1,19 @@
+.flash{
+  padding:            1em $margin-screen;
+  color:              $blue;
+  background:         $alert-blue;
+  border-radius:      0 0 $radius $radius;
+}
+.flash-error{
+  padding:            1em $margin-screen;
+  color:              $red;
+  background:         $alert-red;
+}
+.form-errors{
+  width:              100%;
+  color:              $red;
+  li{
+    font-size:        0.8em;
+    text-align:       right;
+  }
+}

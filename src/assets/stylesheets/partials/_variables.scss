@@ -1,0 +1,54 @@
+/***************************
+Values
+****************************/
+$logo-svg: url(~assets/logos/logo_imatomi.svg);
+$logo-svg-w: url(~assets/logos/logo_imatomi_w.svg);
+$header-height: 35px;
+$header-height-m: 35px;
+$margin-screen: 20px;
+$margin-screen-m: 10px;
+$footer-height: 200px;
+$footer-height-m: 200px;
+$card-margin: 5px;
+$sidebar-width: 250px;
+$radius: 4px;
+$min-width: 280px;
+
+/***************************
+Colors
+****************************/
+// palette
+$black: #1a1a1a;
+$white: #ffffff;
+$bg-black: #2a2a2a;
+$gray: #8f8f8f;
+$light-gray: #cfcfcf;
+$meta-gray: #9f9f9f;
+$disabled-gray: #cfcfcf;
+$red: #ff0000;
+$blue: #2980b9;
+$green: #7dd667;
+$pink: #f01d4f;
+// assign
+$text-color: $white;
+$bg-color: $black;
+$card-bg-color: $white;
+$header-text-color: $text-color;
+$header-bg-color: $bg-black;
+$footer-text-color: $black;
+$footer-bg-color: $bg-color;
+$border-color: $light-gray;
+$shadow-color: rgba($black, 0.15);
+$modal-color: rgba($black, 0.9);
+$modal-color-02: rgba($white, 0.8);
+$link-color: $gray;
+$link-hover: $black;
+$link-bgcolor: rgba($black, 0.1);
+$alert-red: lighten($red, 40%);
+$alert-blue: lighten($blue, 40%);
+$alert-yellow: #ebe16f;
+$alert-green: #e6efc2;
+$shadow: 0px 1px 2px 0px $shadow-color;
+$shadow-1: 0px 3px 10px 0px $shadow-color;
+$shadow-input: 0px 1px 3px 0px rgba($black, 0.24);
+$shadow-button: 0px 1px 3px 0px rgba($black, 0.24);

@@ -1,0 +1,173 @@
+#markdown-editor{
+  position: relative;
+  display: block;
+  .markdown-footer{
+    display: none;
+  }
+  textarea{
+    padding: 0.8em 1em;
+    border-radius: 3px;
+    box-shadow: $shadow inset;
+    border: 1px solid $shadow-color;
+  }
+  input.title{
+    font-size: 1.6rem;
+  }
+  input.tags{
+    padding: 0em 1em;
+    border-radius: 3px;
+    box-shadow: $shadow inset;
+    border: 1px solid $shadow-color;
+  }
+}
+#markdown-preview, #markdown-render{
+  position: relative;
+  display: block;
+  font-size: 0.9rem;
+  line-height: 2rem;
+  .note-header{
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    border-bottom: 1px dashed $border-color;
+    .title{
+      margin: 0.35em 0;
+    }
+  }
+  *{
+    margin: 0.25em 0 0.25em 0;
+    padding: 0;
+    line-height: 1.75em;
+  }
+  .icon-name{
+    margin:           0 0.5rem;
+  }
+  a {
+    color: #4183C4; }
+  a.absent {
+    color: #cc0000; }
+  a.anchor {
+    display: block;
+    padding-left: 30px;
+    margin-left: -30px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin: 1em 0 0.4em 0;
+    font-weight: 600;
+  }
+  h1{
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    &.title{
+      margin-top: 0;
+      font-size: 2rem;
+      line-height: 2.8rem;
+    }
+    &.placeholder{
+      color: $border-color;
+    }
+  }
+  h2{
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
+  h3{
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+  h4{
+    font-size: 1rem;
+    line-height: 1.8rem;
+  }
+  h5{
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+  }
+  h6{
+    font-size: 0.8rem;
+    line-height: 1.4rem;
+  }
+  ul, ol {
+    padding-left: 2em;
+    list-style: initial;
+  }
+  ol{
+    list-style: decimal;
+  }
+  hr{
+    height: 1px;
+    margin: 1rem 0;
+    background-color: $border-color;
+    border: none;
+  }
+  blockquote {
+    border-left: 3px solid $border-color;
+    padding: 0 1.5em;
+    color: #777777;
+  }
+  pre {
+    position: relative;
+    margin: 1rem 0;
+    padding: 1em 1.5em;
+    background-color: rgba($text-color, 0.02);
+    border-radius: 3px;
+    box-shadow: $shadow inset;
+  }
+  code, tt {
+    margin: 0 0.2em;
+    padding: 0.15em 0.5em;
+    white-space: pre-wrap;
+    background-color: rgba($text-color, 0.05);
+    border-radius: 3px;
+    }
+  pre code {
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    background-color: transparent;
+    border: none;
+  }
+  .highlight pre {
+    background-color: #f8f8f8;
+    border: 1px solid #cccccc;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+    border-radius: 3px;
+  }
+  .filename{
+    display: block;
+    margin-bottom: 0.5em;
+    color: $border-color;
+  }
+  iframe{
+    border: 1px solid $border-color;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  table tr {
+  }
+  tbody tr:first-child {
+    background-color: rgba($text-color, 0.05);
+  }
+  table tr th {
+    font-weight: bold;
+    line-height: 1.2em;
+    border: 1px solid #cccccc;
+    padding: 0.5em 1em;
+  }
+  table tr td {
+    line-height: 1.2em;
+    border: 1px solid #cccccc;
+    padding: 0.5em 1em;
+  }
+  @import "prism";
+}

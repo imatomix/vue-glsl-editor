@@ -1,0 +1,171 @@
+.card{
+  position:         relative;
+  margin:           $card-margin;
+  padding:          0px;
+  background:       $card-bg-color;
+  img{
+    height: auto;
+  }
+  &:hover .card-thumbnail>img{
+    opacity:        0.9;
+  }
+  a.card-link{
+    display:        block;
+    position:       absolute;
+    top:            0;
+    left:           0;
+    width:          100%;
+    height:         100%;
+    z-index:        5;
+  }
+}
+.card-hover{
+  &:hover .card-thumbnail>img{
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-name: scaleon;
+  }
+}
+.card-thumbnail{
+  position:         relative;
+  overflow:         hidden;
+  z-index:1;
+  > img{
+    position:       relative;
+    display:        block;
+    width:          100%;
+    height:         100%;
+  }
+  &.circle{
+    display: inline-block;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-name: scalein;
+  }
+}
+.card-info{
+  position: relative;
+  display: block;
+  padding: 0.8rem;
+  h3{
+    padding: 0.15rem 0;
+  }
+  h4{
+    padding: 0.5rem 0;
+  }
+  .card-title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    font-size: 110%;
+  }
+  .created{
+    font-size: 0.85em;
+    line-height: 1rem;
+  }
+  .author{
+    position: relative;
+    margin:      1rem -0.5rem -0.4rem 0;
+    font-size: 0.8rem;
+    color: $link-color;
+    a{
+      z-index: 5;
+      span{
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: right;
+        margin-right: 0.2rem;
+      }
+      img{
+        height: 20px;
+        vertical-align: -5px;
+        margin: 0 0.2rem;
+      }
+    }
+  }
+  .authors{
+    position: relative;
+    z-index:5;
+    .author-list{
+      display: none;
+      position: absolute;
+      bottom: 1rem;
+      right: -0.25rem;
+      box-shadow: $shadow-1;
+      > div {
+        position: relative;
+        margin: 1rem;
+      }
+    }
+    &:hover .author-list{
+      display: block;
+    }
+  }
+}
+.card-shadow{
+  box-shadow:       $shadow;
+  &:hover{
+    animation-duration: 0.1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-name: shadowon;
+    z-index: 1;
+  }
+}
+
+.private{
+  position: relative;
+  opacity: 0.5;
+  .card-info:after{
+    content: 'PRIVATE';
+    position: absolute;
+    top: 2px;
+    left: $card-margin;
+    right:  $card-margin;
+    height: 1.5rem;
+    font-size: 0.5rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    text-align: right;
+    z-index: 5;
+  }
+  &.cover{
+    .card-info:after{
+      top: -7px;
+    }
+  }
+}
+
+.tagname {
+  position: relative;
+  display: inline-block;
+  margin: 0 0.5em 0 0 !important;
+  padding: 0 1em !important;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-size: 0.5rem;
+  line-height: 1rem;
+  color: $bg-color !important;
+  background: $text-color;
+  z-index: 6;
+}
+
+.cover{
+  border-top: 3px solid;
+  .author{
+    margin-top: 0.75em;
+  }
+  .card-info{
+    padding-top: 0.5rem;
+  }
+  .tags{
+    overflow-x: hidden;
+    white-space: nowrap;
+    padding: 2px 6px;
+  }
+}

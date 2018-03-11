@@ -1,0 +1,51 @@
+@keyframes shadowon {
+  100% {
+    box-shadow: $shadow-1;
+  }
+}
+@keyframes scaleon {
+  from {
+    transform: scale(1.0);
+  }
+  to {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes scalein {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleload {
+  from {
+    right: 100%;
+  }
+  to {
+    right: 1em;
+  }
+}
+
+@keyframes dissolvein{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes bounce{
+  100%{
+    top: 25%;
+  }
+}
+@keyframes slide{
+  100%{
+    right: 0;
+  }
+}

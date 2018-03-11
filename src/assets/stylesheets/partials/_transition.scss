@@ -1,0 +1,53 @@
+.wait-enter-active, .wait-leave-active {
+  transition: none .2s ;
+}
+.wait-enter, .wait-leave-to /* .fade-leave-active below version 2.1.8 */ {
+}
+.dropdown-enter-active, .dropdown-leave-active {
+  transition: opacity .1s
+}
+.dropdown-enter, .dropdown-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0
+}
+.people-enter-active{
+  transition: all .5s
+}
+.people-enter{
+  opacity: 0;
+}
+.scale-enter-active, .scale-leave-active {
+  transition: height .3s;
+}
+.scale-enter, .scale-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  height: 0px;
+}
+.fade-enter-active {
+  transition: all .7s;
+}
+.fade-enter {
+  opacity: 0;
+  transform: translateY(35px);
+}
+.pop-enter-active, .pop-leave-active {
+  transition: none .25s;
+  img{
+    transition: transform .25s;
+  }
+}
+.pop-enter, .pop-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  img{
+    transform: scale(0);
+  }
+}
+.switch-enter-active, .switch-leave-active {
+  transition: opacity .2s;
+}
+.switch-enter, .switch-leave-to {
+  opacity: 0;
+}
+.showcase-enter-active, .showcase-leave-active {
+  transition: opacity 1s;
+}
+.showcase-enter, .showcase-leave-to {
+  opacity: 0;
+}
